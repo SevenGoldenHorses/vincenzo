@@ -22,7 +22,7 @@ function BOMBA(tweet) {
 	console.log(testoTweet);
 
 	if ( tweet.user.screen_name !== 'vince44270982' ) { 	
-		if( testoTweet.includes('RT ') == false && inRisposta === null ){
+		if( testoTweet.includes('RT ') == false && inRisposta === null || testoTweet.includes('RT @'+tweet.user.screen_name) == true && inRisposta === null){
 			// Fai la funzione Retweetta e metti mi piace
 			console.log(tweet);
 			function RTF(){
@@ -63,7 +63,10 @@ function BOMBA(tweet) {
 }; //chiusura di BOMBA
 
 //insert ID user account da seguire (esempio MorpheusNetwork, Vestarin).
-var airpod_project = '936204840878866432'
+var FractalStudies = '807999107365273600';
+var Odyfund_org = '960884349980893184';
+var GymRewards = '954770824501911552';
+var airpod_project = '936204840878866432';
 var COTInetwork = '913327957904695297';
 var safehavenio = '929817868673437697';
 var WandXDapp = '879588404693827585';
@@ -93,7 +96,7 @@ var stealthcrypto = '955280820058509312';
 
 
 //parte la connessione con 
-var stream = T.stream('statuses/filter', { follow:  ( ' 936204840878866432 , 913327957904695297 , 929817868673437697 , 879588404693827585 , 2351528224 , 943622133506347008 , 887925114100043776 , 174606919, 953264830454095872 , 888326326284890113 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 955280820058509312 ' ) });
+var stream = T.stream('statuses/filter', { follow:  ( '807999107365273600 , 960884349980893184 , 954770824501911552 , 928375322017382401 , 936204840878866432 , 913327957904695297 , 929817868673437697 , 879588404693827585 , 2351528224 , 943622133506347008 , 887925114100043776 , 174606919, 953264830454095872 , 888326326284890113 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 955280820058509312 ' ) });
 console.log('Connesisone al utente avvenuta correttamente.\n');
 //ogni volta che l'account twitta lui fa partire la funzione Bomba
 stream.on('tweet', BOMBA );
